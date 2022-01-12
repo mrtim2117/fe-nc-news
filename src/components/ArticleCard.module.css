@@ -1,3 +1,65 @@
 .li {
   background-color: white;
+  margin: 0.5em;
+  border-radius: 10px;
+}
+.div_container {
+  display: grid;
+  grid-template-columns: 30% 30% 40%;
+  /* grid-template-rows: auto; */
+}
+.topic {
+  /* text-align: justify; */
+  font-weight: bold;
+  color: black;
+  font-size: 0.8em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.posted {
+  /* text-align: left; */
+  color: gray;
+  font-size: 0.8em;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.date {
+  /* text-align: left; */
+  color: gray;
+  font-size: 0.8em;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.title {
+  font-size: 1.2em;
+  color: black;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.body {
+  color: black;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.comments {
+  font-size: 0.8em;
+  color: gray;
+}
+.votes {
+  font-size: 0.8em;
+  color: gray;
 }
