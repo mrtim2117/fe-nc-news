@@ -1,7 +1,8 @@
-import styles from "./ArticleCard.module.css";
-
 import React from "react";
 import { Link } from "react-router-dom";
+
+import styles from "./ArticleCard.module.css";
+import { dateStrFromSql } from "../utils/utils";
 
 const ArticleCard = ({ article }) => {
   const {
@@ -15,11 +16,7 @@ const ArticleCard = ({ article }) => {
     votes,
   } = article;
 
-  const date = new Date(created_at);
-  const dateStr = new Intl.DateTimeFormat("en-GB", {
-    dateStyle: "short",
-    timeStyle: "short",
-  }).format(date);
+  const dateStr = dateStrFromSql(created_at);
 
   return (
     <li className={styles.li}>

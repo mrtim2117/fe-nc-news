@@ -1,13 +1,10 @@
-.li {
-  background-color: white;
-  margin: 0.5em;
-  border-radius: 10px;
-}
-.div_container {
+.ArticleDetail {
+  border-width: 2px;
+  border-color: black;
+  border-radius: 5px;
+  border-style: solid;
   display: grid;
-  /* grid-template-columns: 30% 30% 40%; */
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: auto; */
 }
 .topic {
   /* text-align: justify; */

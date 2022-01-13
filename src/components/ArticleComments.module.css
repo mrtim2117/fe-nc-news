@@ -1,0 +1,11 @@
+.ArticleComments {
+  border-width: 2px;
+  border-color: black;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+.ul {
+  list-style-type: none;
+  padding: 0;
+}
