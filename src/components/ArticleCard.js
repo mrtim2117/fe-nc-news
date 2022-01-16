@@ -20,17 +20,25 @@ const ArticleCard = ({ article }) => {
 
   return (
     <li className={styles.li}>
-      <Link to={`/articles/${article_id}`}>
-        <div className={styles.div_container}>
+      <div className={styles.div_container}>
+        <div className={styles.header_container}>
           <p className={styles.topic}>topic {topic}</p>
           <p className={styles.posted}>Posted by {author}</p>
           <p className={styles.date}>date: {dateStr}</p>
-          <p className={styles.title}>{title}</p>
-          <p className={styles.body}>{body}</p>
+        </div>
+
+        <Link to={`/articles/${article_id}`}>
+          <div className={styles.link_container}>
+            <p className={styles.title}>{title}</p>
+            <p className={styles.body}>{body}</p>
+          </div>
+        </Link>
+
+        <div className={styles.footer_container}>
           <p className={styles.comments}>{comment_count} Comments</p>
           <p className={styles.votes}>{votes} Votes</p>
         </div>
-      </Link>
+      </div>
     </li>
   );
 };
