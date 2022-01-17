@@ -6,7 +6,7 @@ import styles from "./Login.module.css";
 import { getUsers } from "../utils/api";
 
 const Login = () => {
-  const { loggedIn, login } = useContext(UserContext);
+  const { login } = useContext(UserContext);
   const [users, setUsers] = useState([]);
   const [username, setUsername] = useState("");
   const [failed, setFailed] = useState(false);
@@ -37,8 +37,6 @@ const Login = () => {
   const onChangeUsername = (event) => {
     setUsername(event.target.value);
   };
-
-  console.log("USERS: ", users);
 
   return (
     <form>

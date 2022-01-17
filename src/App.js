@@ -16,7 +16,6 @@ function App() {
       <div className="App">
         <Nav />
         <Routes>
-          {/* <Route path="/" element={<Articles />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:article_id" element={<Article />} />
