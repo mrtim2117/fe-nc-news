@@ -14,7 +14,7 @@ const ArticleComments = () => {
     getCommentsByArticleId(article_id).then((commentsFromApi) => {
       setComments(commentsFromApi);
     });
-  }, []);
+  }, [article_id]);
 
   return (
     <section className={styles.ArticleComments}>

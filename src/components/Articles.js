@@ -10,22 +10,18 @@ import TopicsNav from "./TopicsNav";
 import { UserContext } from "../contexts/UserProvider";
 
 const Articles = () => {
-  const { user, loggedIn } = useContext(UserContext);
+  const { loggedIn } = useContext(UserContext);
 
   const navigate = useNavigate();
   if (!loggedIn) navigate("/", { replace: true });
 
   const [articles, setArticles] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
+  // const [searchParams, setSearchParams] = useSearchParams();
 
   const [topic, setTopic] = useState();
   const [sort_by, setSortBy] = useState();
   const [order, setOrder] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
-  const searchTopic = searchParams.get("topic");
-  const searchSortBy = searchParams.get("sort_by");
-  const searchOrder = searchParams.get("order");
 
   useEffect(() => {
     setIsLoading(true);

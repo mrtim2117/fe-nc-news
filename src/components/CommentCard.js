@@ -4,7 +4,7 @@ import styles from "./CommentCard.module.css";
 import { dateStrFromSql } from "../utils/utils";
 
 const CommentCard = ({ comment }) => {
-  const { comment_id, votes, created_at, author, body } = comment;
+  const { votes, created_at, author, body } = comment;
 
   const dateStr = dateStrFromSql(created_at);
 
