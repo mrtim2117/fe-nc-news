@@ -10,7 +10,7 @@ const UserProfile = () => {
     <>
       <img
         src="https://ps.w.org/simple-user-avatar/assets/icon-256x256.png?rev=2413146"
-        alt="User avatar image"
+        alt="User avatar"
       />
       {loggedIn ? (
         <p>
