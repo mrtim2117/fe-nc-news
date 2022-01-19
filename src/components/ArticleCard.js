@@ -37,7 +37,6 @@ const ArticleCard = ({ article }) => {
 
         <div className={styles.footer_container}>
           <p className={styles.comments}>{comment_count} Comments</p>
-          {/* <p className={styles.votes}>{votes} Votes</p> */}
           <Vote
             className={styles.votes}
             votes={votes}

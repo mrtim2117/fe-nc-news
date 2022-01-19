@@ -40,6 +40,11 @@
   display: inline-block;
   margin: 1em;
 }
+.styles.makeComment {
+  height: 1em;
+  width: auto;
+}
+
 .votes {
   font-size: 0.8em;
   color: gray;

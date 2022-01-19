@@ -48,3 +48,14 @@ export const patchArticle = (url, inc) => {
     return res.data;
   });
 };
+
+export const postCommentByArticleId = (article_id, user, comment) => {
+  return ncNewsApi
+    .post(`/articles/${article_id}/comments`, {
+      username: user,
+      body: comment,
+    })
+    .then((res) => {
+      return res.data;
+    });
+};
