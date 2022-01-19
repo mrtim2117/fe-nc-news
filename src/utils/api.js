@@ -42,3 +42,9 @@ export const getUsers = () => {
     return res.data.users;
   });
 };
+
+export const patchArticle = (url, inc) => {
+  return ncNewsApi.patch(url, { inc_votes: parseInt(inc) }).then((res) => {
+    return res.data;
+  });
+};

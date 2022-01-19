@@ -1,5 +1,7 @@
 import React from "react";
 
+import Vote from "./Vote";
+
 import styles from "./CommentCard.module.css";
 import { dateStrFromSql } from "../utils/utils";
 
@@ -11,9 +13,7 @@ const CommentCard = ({ comment }) => {
   return (
     <li className={styles.li}>
       <p className={styles.body}>{body}</p>
-      <p className={styles.vote}>{votes} Votes</p>
-      <button>+ Vote</button>
-      <button>- Vote</button>
+      <Vote votes={votes} />
       <p className={styles.author}>{author}</p>
       <p className={styles.date}>{dateStr}</p>
     </li>

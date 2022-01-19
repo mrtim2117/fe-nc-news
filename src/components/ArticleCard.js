@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Vote from "./Vote";
 import styles from "./ArticleCard.module.css";
 import { dateStrFromSql } from "../utils/utils";
 
@@ -36,7 +37,12 @@ const ArticleCard = ({ article }) => {
 
         <div className={styles.footer_container}>
           <p className={styles.comments}>{comment_count} Comments</p>
-          <p className={styles.votes}>{votes} Votes</p>
+          {/* <p className={styles.votes}>{votes} Votes</p> */}
+          <Vote
+            className={styles.votes}
+            votes={votes}
+            updateUrl={`/articles/${article_id}`}
+          />
         </div>
       </div>
     </li>

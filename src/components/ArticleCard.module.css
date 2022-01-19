@@ -33,16 +33,16 @@
 .body {
   color: black;
 }
-.footer_container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-}
+
 .comments {
   font-size: 0.8em;
   color: gray;
+  display: inline-block;
+  margin: 1em;
 }
 .votes {
   font-size: 0.8em;
   color: gray;
+  display: inline-block;
+  margin: 1em;
 }
