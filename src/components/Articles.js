@@ -34,8 +34,16 @@ const Articles = () => {
 
   return (
     <section>
-      <ArticleFilter setOrder={setOrder} setSortBy={setSortBy} />
-      <TopicsNav topic={topic} setTopic={setTopic} />
+      <ArticleFilter
+        className={styles.Filter}
+        setOrder={setOrder}
+        setSortBy={setSortBy}
+      />
+      <TopicsNav
+        className={styles.TopicsNav}
+        topic={topic}
+        setTopic={setTopic}
+      />
       {isLoading ? (
         <p>Loading articles...</p>
       ) : (

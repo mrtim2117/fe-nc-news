@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import styles from "./TopicsNav.module.css";
+
 import { getTopics } from "../utils/api";
 
 const TopicsNav = ({ topic, setTopic }) => {
@@ -23,15 +25,21 @@ const TopicsNav = ({ topic, setTopic }) => {
   };
 
   return (
-    <section>
-      <p>Current topic: {!topic ? "all" : topic} </p>
+    <section className={styles.section}>
+      <p className={styles.current_topic}>
+        Current topic: {!topic ? "all" : topic}
+      </p>
 
       {isLoading ? (
         <p>Loading topics...</p>
       ) : (
         topics.map((topic) => {
           return (
-            <button key={topic.slug} onClick={() => onTopicClick(topic.slug)}>
+            <button
+              className={styles.button}
+              key={topic.slug}
+              onClick={() => onTopicClick(topic.slug)}
+            >
               {topic.slug}
             </button>
           );

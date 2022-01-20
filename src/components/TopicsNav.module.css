@@ -1,0 +1,13 @@
+.section {
+  background-color: rgb(13, 13, 82);
+  color: white;
+  padding: 1em;
+}
+.button {
+  margin-top: 1em;
+  width: 70px;
+  margin-right: 0.5em;
+}
+.current_topic {
+  margin-top: 1em;
+}

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { UserContext } from "../contexts/UserProvider";
-// import styles from "./Login.module.css";
+import styles from "./Login.module.css";
 import { getUsers } from "../utils/api";
 
 const Login = () => {
@@ -40,8 +40,8 @@ const Login = () => {
 
   return (
     <form>
-      <h1>Acount Login</h1>
-      <h2>Login</h2>
+      <h1 className={styles.h1}>Acount Login</h1>
+      <h2 className={styles.h2}>Please log-in...</h2>
       <label htmlFor="login">Username</label>
       <input onChange={onChangeUsername} id="login" value={username}></input>
       <button type="submit" onClick={onLoginClick}>

@@ -1,5 +1,7 @@
 import React from "react";
 
+import styles from "./ArticleFilter.module.css";
+
 const ArticleFilter = ({ setOrder, setSortBy }) => {
   const onOrder = (event) => {
     setOrder(event.target.value);
@@ -11,7 +13,7 @@ const ArticleFilter = ({ setOrder, setSortBy }) => {
   };
 
   return (
-    <section>
+    <section className={styles.section}>
       <label htmlFor="order">sort order</label>
       <select onChange={onOrder} name="order" id="order">
         <option value="DESC">descending</option>
