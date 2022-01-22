@@ -30,7 +30,6 @@ const Login = () => {
       navigate("/articles");
     } else {
       setFailed(true);
-      console.log("Failed to login for: ", username);
     }
   };
 

@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import styles from "./Article.module.css";
+
 import { getArticleById } from "../utils/api";
 import ArticleDetail from "./ArticleDetail";
 import ArticleComments from "./ArticleComments";
@@ -24,8 +26,10 @@ const Article = () => {
   if (isLoading) return <p>Loading...</p>;
   return (
     <section>
-      <ArticleDetail article={article} />
-      <ArticleComments />
+      <div className={styles.div}>
+        <ArticleDetail article={article} />
+        <ArticleComments />
+      </div>
     </section>
   );
 };

@@ -18,7 +18,7 @@ const ArticleComments = () => {
 
   return (
     <section className={styles.ArticleComments}>
-      <p>Comments</p>
+      <p className={styles.p}>Comments</p>
       <ul className={styles.ul}>
         {comments.map((comment) => {
           return <CommentCard key={comment.comment_id} comment={comment} />;

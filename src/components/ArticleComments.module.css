@@ -1,11 +1,13 @@
-.ArticleComments {
-  border-width: 2px;
-  border-color: black;
-  border-radius: 5px;
-  border-style: solid;
-}
-
 .ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  background-color: gray;
+}
+.p {
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  padding: 1em;
+  margin: 0;
 }

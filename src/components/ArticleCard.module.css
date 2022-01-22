@@ -29,9 +29,12 @@
 .title {
   font-size: 1.2em;
   color: black;
+  margin-top: 1em;
 }
 .body {
   color: black;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .comments {

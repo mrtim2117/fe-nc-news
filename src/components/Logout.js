@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
+import styles from "./Logout.module.css";
+
 import { UserContext } from "../contexts/UserProvider";
 
 const Logout = () => {
@@ -8,29 +10,30 @@ const Logout = () => {
   const navigate = useNavigate();
 
   const onClickLogout = (confirm) => {
-    console.log("Logout", confirm);
-
     if (confirm) {
       logout();
       navigate("/");
     } else {
-      console.log("don nothing");
+      navigate("/articles");
     }
   };
 
   return (
     <form>
-      <h1>Account Logout </h1>
-      <h2>Logout</h2>
-      <p>Sure you want to logout?</p>
+      <h1 className={styles.h1}>Account Logout </h1>
+      <h2 className={styles.h2}>Logout...</h2>
+      <p className={styles.p}>Sure you want to logout?</p>
       <button
+        className={styles.button}
         onClick={() => {
           onClickLogout(true);
         }}
       >
         Yes
       </button>
-      <button onClick={() => onClickLogout(false)}>No</button>
+      <button className={styles.button} onClick={() => onClickLogout(false)}>
+        No
+      </button>
     </form>
   );
 };

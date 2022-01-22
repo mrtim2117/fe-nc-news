@@ -1,0 +1,12 @@
+.h1 {
+  padding: 1em;
+}
+.h2 {
+  padding: 1em;
+  color: gray;
+}
+.button {
+  margin-top: 1em;
+  width: 70px;
+  margin-right: 0.5em;
+}

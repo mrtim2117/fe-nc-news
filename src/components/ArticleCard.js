@@ -23,7 +23,7 @@ const ArticleCard = ({ article }) => {
     <li className={styles.li}>
       <div className={styles.div_container}>
         <div className={styles.header_container}>
-          <p className={styles.topic}>topic {topic}</p>
+          <p className={styles.topic}>topic: {topic}</p>
           <p className={styles.posted}>Posted by {author}</p>
           <p className={styles.date}>date: {dateStr}</p>
         </div>

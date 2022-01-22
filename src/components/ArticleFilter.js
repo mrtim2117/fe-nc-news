@@ -9,7 +9,6 @@ const ArticleFilter = ({ setOrder, setSortBy }) => {
 
   const onSortBy = (event) => {
     setSortBy(event.target.value);
-    console.log("onSortBy called: ", event.target.value);
   };
 
   return (
