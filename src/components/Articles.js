@@ -16,8 +16,6 @@ const Articles = () => {
   if (!loggedIn) navigate("/", { replace: true });
 
   const [articles, setArticles] = useState([]);
-  // import useSearchParams from "react-router-dom" to re-enable
-  // const [searchParams, setSearchParams] = useSearchParams();
 
   const [topic, setTopic] = useState();
   const [sort_by, setSortBy] = useState();
