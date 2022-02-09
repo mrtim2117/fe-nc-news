@@ -6,8 +6,10 @@ import styles from "./Logout.module.css";
 import { UserContext } from "../contexts/UserProvider";
 
 const Logout = () => {
-  const { logout } = useContext(UserContext);
+  const { loggedIn, logout } = useContext(UserContext);
   const navigate = useNavigate();
+
+  if (!loggedIn) navigate("/", { replace: true });
 
   const onClickLogout = (confirm) => {
     if (confirm) {
