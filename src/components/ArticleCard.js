@@ -31,9 +31,12 @@ const ArticleCard = ({ article }) => {
         <Link to={`/articles/${article_id}`}>
           <div className={styles.link_container}>
             <p className={styles.title}>{title}</p>
-            <p className={styles.body}>{body}</p>
           </div>
         </Link>
+
+        {/* <div className={styles.body_container}> */}
+        <p className={styles.body}>{body}</p>
+        {/* </div> */}
 
         <div className={styles.footer_container}>
           <p className={styles.comments}>{comment_count} Comments</p>

@@ -50,10 +50,6 @@ const Login = () => {
     if (isLoading) return <p>Loading...</p>;
   }
 
-  // if (isLoading) {
-  //   return <p>Loading. Back in a moment...</p>;
-  // }
-
   return (
     <form onSubmit={onLoginClick}>
       <h1 className={styles.h1}>Acount Login</h1>

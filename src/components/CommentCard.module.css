@@ -6,3 +6,10 @@
   margin-left: 1em;
   background-color: white;
 }
+
+.body {
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
