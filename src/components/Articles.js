@@ -21,13 +21,19 @@ const Articles = () => {
   const [sort_by, setSortBy] = useState();
   const [order, setOrder] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [err, setErr] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
-    getArticles(topic, sort_by, order).then((articlesFromApi) => {
-      setIsLoading(false);
-      setArticles(articlesFromApi);
-    });
+    getArticles(topic, sort_by, order)
+      .then((articlesFromApi) => {
+        setIsLoading(false);
+        setArticles(articlesFromApi);
+      })
+      .catch((error) => {
+        setErr(true);
+        setIsLoading(false);
+      });
   }, [order, sort_by, topic]);
 
   return (
@@ -42,7 +48,9 @@ const Articles = () => {
         topic={topic}
         setTopic={setTopic}
       />
-      {isLoading ? (
+      {err ? (
+        <p>Oops...error trying to load articles!</p>
+      ) : isLoading ? (
         <p>Loading articles...</p>
       ) : (
         <ul className={styles.ul}>

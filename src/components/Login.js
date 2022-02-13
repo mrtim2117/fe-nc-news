@@ -8,19 +8,26 @@ import { getUsers } from "../utils/api";
 const Login = () => {
   const { login } = useContext(UserContext);
   const [users, setUsers] = useState([]);
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("tickle122");
+  const [isLoading, setIsLoading] = useState(true);
   const [failed, setFailed] = useState(false);
+  const [err, setErr] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    getUsers().then((usersFromApi) => {
-      setUsers(
-        usersFromApi.map((userFromApi) => {
-          return userFromApi.username;
-        })
-      );
-    });
+    getUsers()
+      .then((usersFromApi) => {
+        setUsers(
+          usersFromApi.map((userFromApi) => {
+            setIsLoading(false);
+            return userFromApi.username;
+          })
+        );
+      })
+      .catch((error) => {
+        setErr(true);
+      });
   }, []);
 
   const onLoginClick = (event) => {
@@ -37,15 +44,23 @@ const Login = () => {
     setUsername(event.target.value);
   };
 
+  if (err) {
+    return <p>Unable to load users!</p>;
+  } else {
+    if (isLoading) return <p>Loading...</p>;
+  }
+
+  // if (isLoading) {
+  //   return <p>Loading. Back in a moment...</p>;
+  // }
+
   return (
-    <form>
+    <form onSubmit={onLoginClick}>
       <h1 className={styles.h1}>Acount Login</h1>
       <h2 className={styles.h2}>Please log-in...</h2>
       <label htmlFor="login">Username</label>
       <input onChange={onChangeUsername} id="login" value={username}></input>
-      <button type="submit" onClick={onLoginClick}>
-        Login
-      </button>
+      <button type="submit">Login</button>
       {failed ? <p>Invalied username</p> : null}
     </form>
   );

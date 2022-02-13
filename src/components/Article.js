@@ -9,21 +9,31 @@ import ArticleDetail from "./ArticleDetail";
 import ArticleComments from "./ArticleComments";
 
 const Article = () => {
-  // Use params to get id
   const { article_id } = useParams();
 
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [err, setErr] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
-    getArticleById(article_id).then((articleFromApi) => {
-      setArticle(articleFromApi);
-      setIsLoading(false);
-    });
+    getArticleById(article_id)
+      .then((articleFromApi) => {
+        setArticle(articleFromApi);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setErr(true);
+        setIsLoading(false);
+      });
   }, [article_id]);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (err) {
+    return <p>Unable to load article!</p>;
+  } else {
+    if (isLoading) return <p>Loading...</p>;
+  }
+
   return (
     <section>
       <div className={styles.div}>
